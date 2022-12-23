@@ -23,26 +23,7 @@ public class InsertTest{
 			int sno=0;
 			String sname=null;
 			String address=null;
-			if(sc!=null) {
-				System.out.print("Enter student sno :: ");
-				sno=sc.nextInt();//gives 5%
-				sc.nextLine();
-				
-				
-				System.out.print("Enter student name :: ");
-				sname=sc.nextLine();//gives  800
-				sname="'"+sname+"'";
-				
-				System.out.print("Enter student  Address :: ");
-				address=sc.nextLine();//gives  1600
-				address="'"+address+"'";
-				
-				System.out.print("Enter student avg marks :: ");
-				avg=sc.nextFloat();
-				
-			}
-			
-			
+
 			//registed jdbc driver by loading jdbc driver class
 			//Class.forName("oracle.jdbc.driver.OracleDriver");
 			
@@ -52,25 +33,61 @@ public class InsertTest{
 			if(con!=null) {
 				st=con.createStatement();
 			}
-			//prepare the sql query
-			//SQL> insert into student values (108,'chandu','kadua',85);
-			String query="insert into student values ("+sno+","+sname+","+address+","+avg+")";
-			System.out.println(query);
+			
 			
 			//send and execute sql queryin db s/w
+			System.out.println(" ::::: Enter student table values :::: ");
+			String query=null;
+			boolean isInsert=true;
 			int count=0;
+			while(isInsert) {
+				if(sc!=null) {
+					System.out.println();
+					System.out.print("Enter student sno :: ");
+					sno=sc.nextInt();//gives 5%
+					sc.nextLine();
+					
+					
+					System.out.print("Enter student name :: ");
+					sname=sc.nextLine();//gives  800
+					sname="'"+sname+"'";
+					
+					
+					System.out.print("Enter student  Address :: ");
+					address=sc.nextLine();//gives  1600
+					address="'"+address+"'";
+					
+					System.out.print("Enter student avg marks :: ");
+					avg=sc.nextFloat();
+					
+					//prepare the sql query
+					//SQL> insert into student values (108,'chandu','kadua',85);
+					 query="insert into student values ("+sno+","+sname+","+address+","+avg+")";
+					System.out.println(query);
+					
+				}
 			if(st!=null) {
-				count=st.executeUpdate(query);
+				st.executeUpdate(query);
+				System.out.println();
+				System.out.print("Are you want to insert again then write TRUE else write False :: ");
+				
+				isInsert=sc.nextBoolean();
+				count++;
+				if(isInsert==false)
+					break;
+				
+			  }
+		
 			}
+			System.out.println("No of records that are Affected is :: "+count);
 			
-				System.out.println("No of records that are Affected is :: "+count);
 			
 		}catch(SQLException se) {
 			if(se.getErrorCode()==1)
 				System.out.println("cant insert same student no");
-			if(se.getErrorCode()==1400)
+			else if(se.getErrorCode()==1400)
 				System.out.println("cant insert null value to sno");
-			if(se.getErrorCode()>=900 && se.getErrorCode()<=999)
+			else if(se.getErrorCode()>=900 && se.getErrorCode()<=999)
 				System.out.println("Invalid column name or table name");
 			else if(se.getErrorCode()==12899)
 				System.out.println("Column value is too large");

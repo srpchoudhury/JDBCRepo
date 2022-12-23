@@ -56,7 +56,8 @@ public class SelectTest4 {
 			while(rs.next()) {
 				flag=true;
 				System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3)+" "+rs.getFloat(4));
-			}if(flag=false) {
+			}
+			if(flag=false) {
 				System.out.println("No Record Found");
 			}
 		}catch(SQLException se) {
