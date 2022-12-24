@@ -16,8 +16,6 @@ public class SelectNonSelectTest {
 	   ResultSet rs=null;
 	try {
 		sc=new Scanner(System.in);
-		
-		int no=0;
 		String query=null;
 		if(sc!=null) {
 			System.out.print("Enter SQL query(Select or Non-Select) :: ");
