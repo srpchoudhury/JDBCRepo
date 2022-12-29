@@ -36,7 +36,7 @@ public class PsDateRetriveByDateRange {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
 			//establish the connection
-			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:ORCL","mydb6pm","MYDB6PM");
+			con=DriverManager.getConnection("jdbc:oracle:thin:@192.168.171.224:1521:ORCL","mydb6pm","MYDB6PM");
 			
 			//create PreparedStatemnet obj
 			if(con!=null) {
@@ -54,13 +54,13 @@ public class PsDateRetriveByDateRange {
 				rs=ps.executeQuery();
 			}
 			
-			//process resultSet obj
-//			if(rs!=null) {
-//				while(rs.next()) {
-//					System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3)+" "+rs.getString(4)+" "+rs.getString(5));
-//
-//				}
-//			}
+			/*process resultSet obj
+			if(rs!=null) {
+				while(rs.next()) {
+					System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3)+" "+rs.getString(4)+" "+rs.getString(5));
+
+				}
+			}*/
 			
 			System.out.println("------------------------------");
 			

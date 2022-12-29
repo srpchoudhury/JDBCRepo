@@ -1,5 +1,5 @@
 //SelectTest.java
-package com.nt.jdbc;
+package com.nt.jdbc1;
 
 /*
  * Java Application to get Employee details based on given initial characters Employee name
@@ -11,32 +11,26 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
-public class SelectTest4 {
+public class SelectTestTWR {
        public static void main(String[] args) {
-    	Scanner sc=null;
-		Connection con=null;
-		Statement st=null;
-		ResultSet rs=null;
+    	
 		
-		try {
-			//read inputs
-				sc=new Scanner(System.in);
-				String initChars=null;
-			if(sc!=null) {
-				System.out.print("Enter initial character of Employee name ::: ");
-			    initChars=sc.next();
-			}
-			//converting given input value as required sql query
-			initChars=initChars.toUpperCase();
-			initChars="'"+initChars+"%'";
+		
+		try (
+		
 			
 		//register jdbc driver by loading JDBC driver class
 			//Class.forName("oracle.jdbc.driver.OracleDriver");
 		//establish the connection
-			con=DriverManager.getConnection("jdbc:oracle:thin:@192.168.171.224:1521:ORCL","MYDB6PM","MYDB6PM");
-			
+			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@192.168.171.224:1521:ORCL","SYSTEM","tiger");
+		    //create statement object
+				Statement st=con.createStatement();
+			//send and execute sql query in db s/w
+				ResultSet rs=st.executeQuery("SELECT SNO,SNAME,SADD FROM STUDENT")
+				)
+		{
 			if(con!=null) {
-				st=con.createStatement();
+				
 			}
 			
 			//prepare SQL query
