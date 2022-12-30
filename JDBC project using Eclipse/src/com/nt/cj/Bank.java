@@ -23,15 +23,17 @@ public class Bank{
 		size          =0;
 		scanner       =new Scanner(System.in);
 
-		try{
+		try (BufferedReader accNumReader = new BufferedReader(new FileReader("accNumSeq.txt"))){
 			
-			BufferedReader accNumReader = new BufferedReader(new FileReader("accNumSeq.txt"));
 			long accNumSeq  =Long.parseLong(accNumReader.readLine());
 			accNumGenerator =new AtomicLong(accNumSeq);
 
 		}catch(FileNotFoundException e){
 			System.out.println("accNumSeq.txt is not found");
 		}catch(IOException e){
+			e.printStackTrace();
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
