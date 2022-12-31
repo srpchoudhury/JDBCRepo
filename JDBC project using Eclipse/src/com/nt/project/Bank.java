@@ -110,7 +110,7 @@ public class Bank {
 				double amt=0.0;
 				int accNum=0;
 				//String query3=null;
-				//String query4=null;
+				/String query4=null;
 				if(flag2==true) 
 					System.out.print("Enter your Account Number :: ");
 					 accNum=sc.nextInt();
