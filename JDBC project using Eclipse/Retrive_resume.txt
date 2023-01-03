@@ -1,0 +1,5 @@
+photoloc=‪C:\AJ\classContents\Actrees\rukshar.jpeg
+resumeloc=‪C:\Users\srpchoudhury\Desktop\CVS\JEE_S Rudra Prasad Choudhury_MCA2023P.pdf
+biodateLoc=C:\Users\srpchoudhury\Desktop\paths\paths.txt
+audioLoc=C:\Users\srpchoudhury\Desktop\paths\Call@Home 2(00918596996950)_20220226063330.mp3
+videoLoc=C:\Users\srpchoudhury\Videos\Rec 0003.mp4
