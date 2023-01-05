@@ -23,7 +23,7 @@ CREATE OR REPLACE PROCEDURE P_AUTHENTICATE
 14   RESULT:='INVALID CREDENTIAL';
 15  END IF;
 16* END;
-*/
+*///procedure plsql
 
 public class CsProcedureTest_Auth {
     private static final String CALL_PROCEDURE_QUERY="{CALL P_AUTHENTICATE}";
