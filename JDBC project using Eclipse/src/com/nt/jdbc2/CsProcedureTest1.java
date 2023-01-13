@@ -2,7 +2,7 @@
 package com.nt.jdbc2;
 
 /*
- * CallableStatement with PL/SQL procedures
+ * CallableStatement with PL/SQL proceduress
  */
 import java.sql.CallableStatement;
 import java.sql.Connection;
