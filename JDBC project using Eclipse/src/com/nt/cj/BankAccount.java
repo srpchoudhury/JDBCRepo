@@ -1,6 +1,6 @@
 package com.nt.cj;
 
-//BankAccount.java
+//BankAccount.java code
 import static java.lang.System.out;
 
 import  java.io.BufferedReader;
