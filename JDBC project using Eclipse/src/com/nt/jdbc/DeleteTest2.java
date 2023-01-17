@@ -1,6 +1,6 @@
 package com.nt.jdbc;
 /*
- * Non-select query execution
+ * Non-select query execution flow
  */
 
 import java.sql.Connection;
